@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+body {
+  display: grid;
+  max-width: 1440px;
+  width: 100%;
+  height: 900px;
+  grid-template-columns: minmax(min-content, 483px) minmax(min-content, 957px);
+  grid-template-rows: 900px;
+  grid-template-areas: "cards form";
+  place-items: center;
+  margin: 0 auto;
+}
+
+.cards {
+  grid-area: cards;
+  max-width: 483px;
+  width: 100%;
+  height: 100%;
+  background: no-repeat center/cover url(./images/bg-main-desktop.png);
+  position: relative;
+}
+.cards__front {
+  max-width: 447px;
+  width: 100%;
+  height: 245px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: normal;
+  position: absolute;
+  top: 187px;
+  left: 170px;
+  background: url(./images/bg-card-front.png) no-repeat center/contain;
+  padding: 28px 32px;
+}
+.cards__logo {
+  background: url(./images/card-logo.svg) no-repeat center/contain;
+  width: 84px;
+  height: 47px;
+}
+.cards__number {
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 3.422px;
+  text-transform: none;
+  color: #FFFFFF;
+  margin-top: 64px;
+}
+.cards__name-date {
+  max-width: 383px;
+  width: 100%;
+  height: 18px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: normal;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  margin-top: 25px;
+}
+.cards__back {
+  max-width: 447px;
+  width: 100%;
+  height: 247px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: normal;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  position: absolute;
+  top: 470px;
+  left: 258px;
+  background: url(./images/bg-card-back.png) no-repeat center/contain;
+  padding-top: 111px;
+  padding-left: 358px;
+}
+
+.form {
+  grid-area: form;
+  max-width: 957px;
+  width: 100%;
+  height: 100%;
+  padding-top: 275px;
+  padding-left: 350px;
+}
+.form__box {
+  max-width: 381px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 26px;
+}
+.form__box-name, .form__box-number {
+  max-width: 381px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 9px;
+}
+.form__box-date-cvc {
+  max-width: 381px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+}
+.form__date {
+  max-width: 170px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 9px;
+}
+.form__cvc {
+  max-width: 191px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 9px;
+}
+.form__month-year {
+  max-width: 170px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.form__label {
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #21092F;
+}
+.form__input {
+  max-width: 381px;
+  width: 100%;
+  height: 45px;
+  padding: 11px 0 11px 16px;
+  border-radius: 8px;
+  border: 1px solid #DFDEE0;
+  outline: none;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: normal;
+  text-transform: none;
+  color: #21092F;
+}
+.form__input--date {
+  max-width: 80px;
+}
+.form__input--cvc {
+  max-width: 191px;
+}
+.form__input::-moz-placeholder {
+  opacity: 0.25;
+}
+.form__input::placeholder {
+  opacity: 0.25;
+}
+.form__submit {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: normal;
+  text-transform: none;
+  color: #FFFFFF;
+  max-width: 381px;
+  width: 100%;
+  height: 53px;
+  border-radius: 8px;
+  background-color: #21092F;
+  border: none;
+  cursor: pointer;
+}
+.form__error {
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: normal;
+  text-transform: normal;
+  color: #FF5050;
+  display: none;
+}/*# sourceMappingURL=style.css.map */
