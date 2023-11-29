@@ -10,6 +10,7 @@
 $font-color-white: #FFFFFF;
 $font-color-dark: #21092F;
 $font-color-error: #FF5050;
+$font-color-paragraph: #8F8694;
 $border-light-grey: #DFDEE0;
 
 @mixin flexBox($flex-width, $flex-height, $flex-direction, $flex-justify-content: flex-start, $flex-align-items: stretch, $flex-gap: normal) {
@@ -64,9 +65,10 @@ body {
         @include flexBox(447px, 245px, column, flex-start, flex-start, normal);
         position: absolute;
         top: 187px;
-        left: 170px;
+        left: 35%;
         background: url(./images/bg-card-front.png) no-repeat center/contain;
         padding: 28px 32px;
+        width: 447px;
     }
 
     &__logo {
@@ -91,10 +93,11 @@ body {
         @include typography(14px, normal, 500, normal, 2px, uppercase, $font-color-white);
         position: absolute;
         top: 470px;
-        left: 258px;
+        left: 53%;
         background: url(./images/bg-card-back.png) no-repeat center/contain;
         padding-top: 111px;
         padding-left: 358px;
+        width: 447px;
     }
 }
 
@@ -114,7 +117,7 @@ body {
     }
 
     &__box-date-cvc {
-        @include flexBox(381px, auto, row, flex-start, center, 20px);
+        @include flexBox(381px, auto, row, flex-start, flex-start, 20px);
     }
 
     &__date {
@@ -151,6 +154,10 @@ body {
         &--cvc {
             max-width: 191px;
         }
+
+        &--error {
+            border: 1px solid $font-color-error;
+        }
     }
 
     &__input::placeholder {
@@ -169,7 +176,41 @@ body {
     }
 
     &__error {
-        @include typography(12px, normal, 500, normal, normal, normal, $font-color-error);
+        @include typography(12px, normal, 500, normal, normal, none, $font-color-error);
         display: none;
     }
+}
+
+.added {
+    @include flexBox(381px, auto, column, center, center, unset);
+
+    &__img {
+        width: 80px;
+        height: 80px;
+    }
+
+    &__title {
+        @include typography(28px, normal, 500, normal, 3.422px, none, $font-color-dark);
+        margin-top: 35px;
+    }
+
+    &__paragraph {
+        @include typography(18px, normal, 500, normal, normal, none, $font-color-paragraph);
+        margin-top: 16px;
+    }
+
+    &__btn {
+        @include typography(18px, normal, 500, normal, normal, none, $font-color-white);
+        max-width: 381px;
+        width: 100%;
+        height: 53px;
+        border-radius: 8px;
+        background-color: $font-color-dark;
+        margin-top: 48px;
+        cursor: pointer;
+    }
+}
+
+.hide {
+    display: none;
 }

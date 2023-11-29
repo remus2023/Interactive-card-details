@@ -37,9 +37,10 @@ body {
   gap: normal;
   position: absolute;
   top: 187px;
-  left: 170px;
+  left: 35%;
   background: url(./images/bg-card-front.png) no-repeat center/contain;
   padding: 28px 32px;
+  width: 447px;
 }
 .cards__logo {
   background: url(./images/card-logo.svg) no-repeat center/contain;
@@ -92,10 +93,11 @@ body {
   color: #FFFFFF;
   position: absolute;
   top: 470px;
-  left: 258px;
+  left: 53%;
   background: url(./images/bg-card-back.png) no-repeat center/contain;
   padding-top: 111px;
   padding-left: 358px;
+  width: 447px;
 }
 
 .form {
@@ -133,7 +135,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   gap: 20px;
 }
 .form__date {
@@ -197,6 +199,9 @@ body {
 .form__input--cvc {
   max-width: 191px;
 }
+.form__input--error {
+  border: 1px solid #FF5050;
+}
 .form__input::-moz-placeholder {
   opacity: 0.25;
 }
@@ -225,7 +230,62 @@ body {
   font-weight: 500;
   line-height: normal;
   letter-spacing: normal;
-  text-transform: normal;
+  text-transform: none;
   color: #FF5050;
+  display: none;
+}
+
+.added {
+  max-width: 381px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: unset;
+}
+.added__img {
+  width: 80px;
+  height: 80px;
+}
+.added__title {
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 3.422px;
+  text-transform: none;
+  color: #21092F;
+  margin-top: 35px;
+}
+.added__paragraph {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: normal;
+  text-transform: none;
+  color: #8F8694;
+  margin-top: 16px;
+}
+.added__btn {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: normal;
+  text-transform: none;
+  color: #FFFFFF;
+  max-width: 381px;
+  width: 100%;
+  height: 53px;
+  border-radius: 8px;
+  background-color: #21092F;
+  margin-top: 48px;
+  cursor: pointer;
+}
+
+.hide {
   display: none;
 }/*# sourceMappingURL=style.css.map */
