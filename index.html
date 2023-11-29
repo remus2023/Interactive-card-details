@@ -17,34 +17,37 @@
     <section class="cards">
       <div class="cards__front">
         <div class="cards__logo"></div>
-        <div class="cards__number">0000 0000 0000 0000</div>
+        <div class="cards__number" id="cardNumber">0000 0000 0000 0000</div>
         <div class="cards__name-date">
-          <div class="cards__name">Jane Appleseed</div>
-          <div class="cards__date">00/00</div>
+          <div class="cards__name" id="cardName">Jane Appleseed</div>
+          <div class="cards__date">
+            <span id="cardMonth">00</span>/<span id="cardYear">00</span>
+          </div>
         </div>
       </div>
-      <div class="cards__back">000</div>
+      <div class="cards__back" id="cardCvc">000</div>
     </section>
     <section class="form">
-      <div class="form__box">
+      <div class="form__box" id="formBox">
         <div class="form__box-name">
           <label class="form__label">Cardholder Name</label>
           <input
             type="text"
             class="form__input"
-            id="name"
+            id="inputName"
             placeholder="e.g. Jane Appleseed"
           />
           <div class="form__error" id="nameError">Can’t be blank</div>
         </div>
         <div class="form__box-number">
-          <label for="number" class="form__label">Card Number</label>
+          <label class="form__label">Card Number</label>
           <input
             type="text"
             class="form__input"
-            id="number"
+            id="inputNumber"
             maxlength="19"
             placeholder="e.g. 1234 5678 9123 0000"
+            oninput="checkNumber(id)"
           />
           <div class="form__error" id="numberError">
             Wrong format, numbers only
@@ -55,30 +58,51 @@
             <label class="form__label">EXP. DATE (MM/YY)</label>
             <div class="form__month-year">
               <input
-                type="number"
+                type="text"
                 class="form__input form__input--date"
                 placeholder="MM"
+                id="inputMonth"
+                maxlength="2"
+                oninput="checkCvc(this.id)"
               />
+              <!-- de ce merge si this.id si id??? -->
               <input
-                type="number"
+                type="text"
                 class="form__input form__input--date"
                 placeholder="YY"
+                id="inputYear"
+                maxlength="2"
+                oninput="checkCvc(id)"
               />
             </div>
-            <div class="form__error" id="montYearError">Can’t be blank</div>
+            <div class="form__error" id="monthYearError">Can’t be blank</div>
           </div>
           <div class="form__cvc">
             <label class="form__label">CVC</label>
             <input
-              type="number"
+              type="text"
               class="form__input form__input--cvc"
-              id="form__cvc"
+              id="inputCvc"
               placeholder="e.g.123"
+              maxlength="3"
+              oninput="checkCvc(id)"
             />
             <div class="form__error" id="cvcError">Can’t be blank</div>
           </div>
         </div>
-        <button class="form__submit">Confirm</button>
+        <button class="form__submit" id="submitButton" type="button">
+          Confirm
+        </button>
+      </div>
+      <div class="added hide" id="added">
+        <img
+          src="./images/icon-complete.svg"
+          alt="complete"
+          class="added__img"
+        />
+        <h1 class="added__title">THANK YOU!</h1>
+        <p class="added__paragraph">We’ve added your card details</p>
+        <button class="added__btn" type="button" id="addedBtn">Continue</button>
       </div>
     </section>
   </body>
