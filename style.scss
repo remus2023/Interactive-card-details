@@ -45,12 +45,28 @@ body {
     display: grid;
     max-width: 1440px;
     width: 100%;
-    height: 900px;
     grid-template-columns: minmax(min-content, 483px) minmax(min-content, 957px);
     grid-template-rows: 900px;
     grid-template-areas: "cards form";
     place-items: center;
     margin: 0 auto;
+
+    @media (max-width:1050px) {
+        max-width: 768px;
+        width: 100%;
+        grid-template-columns: minmax(min-content, 768px);
+        grid-template-rows: 500px;
+        grid-template-areas:
+            "cards"
+            "form";
+    }
+
+    @media (max-width:700px) {
+        max-width: 375px;
+        width: 100%;
+        grid-template-columns: minmax(min-content, 375px);
+        grid-template-rows: 240px minmax(min-content, 464px);
+    }
 }
 
 
@@ -61,6 +77,15 @@ body {
     background: no-repeat center/cover url(./images/bg-main-desktop.png);
     position: relative;
 
+    @media (max-width:1050px) {
+        background: no-repeat center/cover url(./images/bg-main-mobile.png);
+        @include dimensionBox(768px);
+    }
+
+    @media (max-width:700px) {
+        @include dimensionBox(375px);
+    }
+
     &__front {
         @include flexBox(447px, 245px, column, flex-start, flex-start, normal);
         position: absolute;
@@ -69,23 +94,72 @@ body {
         background: url(./images/bg-card-front.png) no-repeat center/contain;
         padding: 28px 32px;
         width: 447px;
+
+        @media (max-width:1050px) {
+            @include flexBox(366px, 200px, column, flex-start, flex-start, normal);
+            top: 220px;
+            left: 7%;
+            width: 366px;
+            padding: 18px 26px;
+            z-index: 1;
+        }
+
+        @media (max-width:700px) {
+            @include flexBox(285px, 157px, column, flex-start, flex-start, normal);
+            top: 127px;
+            left: 17px;
+            padding: 18px 20px;
+        }
     }
 
     &__logo {
         background: url(./images/card-logo.svg) no-repeat center/contain;
         width: 84px;
         height: 47px;
+
+        @media (max-width:1050px) {
+            width: 69px;
+            height: 39px;
+        }
+
+        @media (max-width:700px) {
+            width: 54px;
+            height: 30px;
+        }
     }
 
     &__number {
         @include typography(28px, normal, 500, normal, 3.422px, none, $font-color-white);
         margin-top: 64px;
+
+        @media (max-width:1050px) {
+            font-size: 22px;
+            margin-top: 51px;
+        }
+
+        @media (max-width:700px) {
+            font-size: 18px;
+            margin-top: 37px;
+            letter-spacing: 2.2px;
+        }
     }
 
     &__name-date {
         @include flexBox(383px, 18px, row, space-between, center, normal);
         @include typography(14px, normal, 500, normal, 2px, uppercase, $font-color-white);
         margin-top: 25px;
+
+        @media (max-width:1050px) {
+            font-size: 12px;
+            margin-top: 21px;
+        }
+
+        @media (max-width:700px) {
+            font-size: 9px;
+            margin-top: 17px;
+            letter-spacing: 1.286px;
+        }
+
     }
 
     &__back {
@@ -98,6 +172,25 @@ body {
         padding-top: 111px;
         padding-left: 358px;
         width: 447px;
+
+        @media (max-width:1050px) {
+            @include flexBox(366px, 200px, row, flex-start, flex-start, normal);
+            top: 64px;
+            left: 45%;
+            font-size: 12px;
+            padding-top: 91px;
+            padding-left: 290px;
+        }
+
+        @media (max-width:700px) {
+            @include flexBox(286px, 157px, row, flex-start, flex-start, normal);
+            top: 32px;
+            left: 73px;
+            font-size: 9px;
+            padding-top: 72px;
+            padding-left: 231px;
+
+        }
     }
 }
 
@@ -107,8 +200,27 @@ body {
     padding-top: 275px;
     padding-left: 350px;
 
+    @media (max-width:1050px) {
+        @include dimensionBox(768px);
+        padding: 70px;
+        display: grid;
+        place-items: center;
+    }
+
+    @media (max-width:700px) {
+        @include dimensionBox(375px);
+        padding: 45px 24px;
+        display: grid;
+        place-items: center;
+    }
+
     &__box {
         @include flexBox(381px, auto, column, center, flex-start, 26px);
+
+        @media (max-width:700px) {
+            gap: 20px;
+            padding-top: 30px;
+        }
     }
 
     &__box-name,

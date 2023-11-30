@@ -10,12 +10,28 @@ body {
   display: grid;
   max-width: 1440px;
   width: 100%;
-  height: 900px;
   grid-template-columns: minmax(min-content, 483px) minmax(min-content, 957px);
   grid-template-rows: 900px;
   grid-template-areas: "cards form";
   place-items: center;
   margin: 0 auto;
+}
+@media (max-width: 1050px) {
+  body {
+    max-width: 768px;
+    width: 100%;
+    grid-template-columns: minmax(min-content, 768px);
+    grid-template-rows: 500px;
+    grid-template-areas: "cards" "form";
+  }
+}
+@media (max-width: 700px) {
+  body {
+    max-width: 375px;
+    width: 100%;
+    grid-template-columns: minmax(min-content, 375px);
+    grid-template-rows: 240px minmax(min-content, 464px);
+  }
 }
 
 .cards {
@@ -25,6 +41,21 @@ body {
   height: 100%;
   background: no-repeat center/cover url(./images/bg-main-desktop.png);
   position: relative;
+}
+@media (max-width: 1050px) {
+  .cards {
+    background: no-repeat center/cover url(./images/bg-main-mobile.png);
+    max-width: 768px;
+    width: 100%;
+    height: 100%;
+  }
+}
+@media (max-width: 700px) {
+  .cards {
+    max-width: 375px;
+    width: 100%;
+    height: 100%;
+  }
 }
 .cards__front {
   max-width: 447px;
@@ -42,10 +73,54 @@ body {
   padding: 28px 32px;
   width: 447px;
 }
+@media (max-width: 1050px) {
+  .cards__front {
+    max-width: 366px;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: normal;
+    top: 220px;
+    left: 7%;
+    width: 366px;
+    padding: 18px 26px;
+    z-index: 1;
+  }
+}
+@media (max-width: 700px) {
+  .cards__front {
+    max-width: 285px;
+    width: 100%;
+    height: 157px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: normal;
+    top: 127px;
+    left: 17px;
+    padding: 18px 20px;
+  }
+}
 .cards__logo {
   background: url(./images/card-logo.svg) no-repeat center/contain;
   width: 84px;
   height: 47px;
+}
+@media (max-width: 1050px) {
+  .cards__logo {
+    width: 69px;
+    height: 39px;
+  }
+}
+@media (max-width: 700px) {
+  .cards__logo {
+    width: 54px;
+    height: 30px;
+  }
 }
 .cards__number {
   font-size: 28px;
@@ -56,6 +131,19 @@ body {
   text-transform: none;
   color: #FFFFFF;
   margin-top: 64px;
+}
+@media (max-width: 1050px) {
+  .cards__number {
+    font-size: 22px;
+    margin-top: 51px;
+  }
+}
+@media (max-width: 700px) {
+  .cards__number {
+    font-size: 18px;
+    margin-top: 37px;
+    letter-spacing: 2.2px;
+  }
 }
 .cards__name-date {
   max-width: 383px;
@@ -74,6 +162,19 @@ body {
   text-transform: uppercase;
   color: #FFFFFF;
   margin-top: 25px;
+}
+@media (max-width: 1050px) {
+  .cards__name-date {
+    font-size: 12px;
+    margin-top: 21px;
+  }
+}
+@media (max-width: 700px) {
+  .cards__name-date {
+    font-size: 9px;
+    margin-top: 17px;
+    letter-spacing: 1.286px;
+  }
 }
 .cards__back {
   max-width: 447px;
@@ -99,6 +200,40 @@ body {
   padding-left: 358px;
   width: 447px;
 }
+@media (max-width: 1050px) {
+  .cards__back {
+    max-width: 366px;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: normal;
+    top: 64px;
+    left: 45%;
+    font-size: 12px;
+    padding-top: 91px;
+    padding-left: 290px;
+  }
+}
+@media (max-width: 700px) {
+  .cards__back {
+    max-width: 286px;
+    width: 100%;
+    height: 157px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: normal;
+    top: 32px;
+    left: 73px;
+    font-size: 9px;
+    padding-top: 72px;
+    padding-left: 231px;
+  }
+}
 
 .form {
   grid-area: form;
@@ -107,6 +242,26 @@ body {
   height: 100%;
   padding-top: 275px;
   padding-left: 350px;
+}
+@media (max-width: 1050px) {
+  .form {
+    max-width: 768px;
+    width: 100%;
+    height: 100%;
+    padding: 70px;
+    display: grid;
+    place-items: center;
+  }
+}
+@media (max-width: 700px) {
+  .form {
+    max-width: 375px;
+    width: 100%;
+    height: 100%;
+    padding: 45px 24px;
+    display: grid;
+    place-items: center;
+  }
 }
 .form__box {
   max-width: 381px;
@@ -117,6 +272,12 @@ body {
   justify-content: center;
   align-items: flex-start;
   gap: 26px;
+}
+@media (max-width: 700px) {
+  .form__box {
+    gap: 20px;
+    padding-top: 30px;
+  }
 }
 .form__box-name, .form__box-number {
   max-width: 381px;
