@@ -3,12 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./images/favicon-32x32.png"
-    />
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
     <link rel="stylesheet" href="./style.css" />
     <script src="./script.js" defer></script>
     <title>Frontend Mentor | Interactive card details form</title>
@@ -20,9 +15,7 @@
         <div class="cards__number" id="cardNumber">0000 0000 0000 0000</div>
         <div class="cards__name-date">
           <div class="cards__name" id="cardName">Jane Appleseed</div>
-          <div class="cards__date">
-            <span id="cardMonth">00</span>/<span id="cardYear">00</span>
-          </div>
+          <div class="cards__date"><span id="cardMonth">00</span>/<span id="cardYear">00</span></div>
         </div>
       </div>
       <div class="cards__back" id="cardCvc">000</div>
@@ -31,12 +24,7 @@
       <div class="form__box" id="formBox">
         <div class="form__box-name">
           <label class="form__label">Cardholder Name</label>
-          <input
-            type="text"
-            class="form__input"
-            id="inputName"
-            placeholder="e.g. Jane Appleseed"
-          />
+          <input type="text" class="form__input" id="inputName" placeholder="e.g. Jane Appleseed" />
           <div class="form__error" id="nameError">Can’t be blank</div>
         </div>
         <div class="form__box-number">
@@ -49,9 +37,7 @@
             placeholder="e.g. 1234 5678 9123 0000"
             oninput="checkNumber(id)"
           />
-          <div class="form__error" id="numberError">
-            Wrong format, numbers only
-          </div>
+          <div class="form__error" id="numberError">Wrong format, numbers only</div>
         </div>
         <div class="form__box-date-cvc">
           <div class="form__date">
@@ -90,16 +76,10 @@
             <div class="form__error" id="cvcError">Can’t be blank</div>
           </div>
         </div>
-        <button class="form__submit" id="submitButton" type="button">
-          Confirm
-        </button>
+        <button class="form__submit" id="submitButton" type="button">Confirm</button>
       </div>
       <div class="added hide" id="added">
-        <img
-          src="./images/icon-complete.svg"
-          alt="complete"
-          class="added__img"
-        />
+        <img src="./images/icon-complete.svg" alt="complete" class="added__img" />
         <h1 class="added__title">THANK YOU!</h1>
         <p class="added__paragraph">We’ve added your card details</p>
         <button class="added__btn" type="button" id="addedBtn">Continue</button>
